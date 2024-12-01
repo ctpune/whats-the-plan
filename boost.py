@@ -13,7 +13,7 @@ while res_date <= end:
         os.system(f'git add .')
         os.system(f'git commit --date "{res_date}" -m "c" --no-gpg-sign -q')
         count += 1
-        if count % 10000 == 0:
+        if count % 50 == 0:
             os.system('git push -q')
             print(f'{count} commits pushed...')
     res_date += datetime.timedelta(days=1)
