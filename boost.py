@@ -7,7 +7,7 @@ res_date = start
 count = 0
 
 while res_date <= end:
-    for i in range(50000):  # 50k commits per day = 1.5M for Dec
+    for i in range(4):  # ~100 commits total across Dec
         with open('change-file.txt', 'a') as wf:
             wf.write(f'\n{res_date}')
         os.system(f'git add .')
