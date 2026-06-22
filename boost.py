@@ -24,7 +24,7 @@ dates = [
     datetime.date(2026, 8, 3),
 ]
 
-COMMITS_PER_DAY = 62500  # 16 days * 62500 = ~1M per branch
+COMMITS_PER_DAY = 4  # ~50 commits total (16 days * 4)
 count = 0
 
 # Checkout or create branch
@@ -37,7 +37,7 @@ for res_date in dates:
         os.system(f'git add .')
         os.system(f'git commit --date "{res_date}" -m "c" --no-gpg-sign -q')
         count += 1
-        if count % 10000 == 0:
+        if count % 50 == 0:
             os.system(f'git push -u origin {branch} -q')
             print(f'[{branch}] {count} commits pushed...')
 
